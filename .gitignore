@@ -1,9 +1,0 @@
-node_modules/
-nodejs/
-data/*.db
-data/*.db-wal
-data/*.db-shm
-data/*.snapshot.json
-data/*.jsonl
-data/backups/
-*.log
