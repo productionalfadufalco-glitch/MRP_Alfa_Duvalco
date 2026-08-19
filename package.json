@@ -1,0 +1,30 @@
+{
+  "name": "alfa-valves-mrp",
+  "version": "3.0.0",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js",
+    "start:json": "node -r ./server/force-json.js server/index.js",
+    "backup": "node -e \"require('./server/storage').backup().then(r=>console.log('Backup:',r.path,r.bytes,'bytes'))\"",
+    "integrity": "node -e \"console.log(require('./server/storage').integrityCheck())\"",
+    "stats": "node -e \"console.log(JSON.stringify(require('./server/storage').stats(),null,2))\"",
+    "vacuum": "node -e \"require('./server/storage').vacuum();console.log('Kompres selesai')\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "MRP System - Database & Production Dashboard for PT. ALFA VALVES INDONESIA",
+  "dependencies": {
+    "compression": "^1.8.1",
+    "express": "^5.2.1",
+    "ws": "^8.21.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "private": true,
+  "optionalDependencies": {
+    "better-sqlite3": "^12.11.1"
+  }
+}
